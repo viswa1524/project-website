@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Website · viswa1524</title>
+  <meta name="description" content="Production-ready project showcase with automated GitHub Actions CI/CD deployment to GitHub Pages." />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+    
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    
+    code, pre {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+    
+    .gradient-mesh {
+      background: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+                  radial-gradient(circle at 90% 80%, rgba(14, 165, 233, 0.08) 0%, transparent 40%),
+                  #f8fafc;
+    }
+  </style>
+</head>
+<body class="gradient-mesh text-slate-800 min-h-screen flex flex-col antialiased selection:bg-indigo-100 selection:text-indigo-900">
+
+  <!-- Top Navigation -->
+  <header class="sticky top-0 z-50 glass-card border-b border-slate-200/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg bg-slate-900 text-white flex items-center justify-center font-bold text-sm shadow-sm">
+          V
+        </div>
+        <div>
+          <span class="font-bold text-slate-900 tracking-tight text-base">viswa1524</span>
+          <span class="text-slate-400 mx-1.5">/</span>
+          <span class="text-slate-600 font-medium text-sm">project-website</span>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
+        <a href="#projects" class="hover:text-slate-900 transition-colors">Projects</a>
+        <a href="#pipeline" class="hover:text-slate-900 transition-colors">CI/CD Pipeline</a>
+        <a href="#tech" class="hover:text-slate-900 transition-colors">Architecture</a>
+        <a href="#automation" class="hover:text-slate-900 transition-colors">Actions Workflow</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="https://github.com/viswa1524/project-website" target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900 text-white hover:bg-slate-800 text-xs font-semibold shadow-sm transition-all">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          <span>View on GitHub</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-16 pb-20 px-4 sm:px-6 max-w-6xl mx-auto text-center md:text-left">
+    <div class="grid md:grid-cols-12 gap-12 items-center">
+      <div class="md:col-span-7 space-y-6">
+        
+        <!-- Live Status Row -->
+        <div class="flex items-center justify-center md:justify-start gap-2 text-xs text-slate-600">
+          <span class="inline-flex items-center gap-1.5 font-medium text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200/60">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            Automated via GitHub Actions
+          </span>
+          <span aria-hidden="true" class="text-slate-300">·</span>
+          <span>GitHub Pages Live</span>
+          <span aria-hidden="true" class="text-slate-300">·</span>
+          <span>viswa1524</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.1]">
+          Modern Project Showcase & Automated CI/CD
+        </h1>
+
+        <p class="text-lg text-slate-600 leading-relaxed max-w-2xl">
+          A high-performance project platform automatically deployed to GitHub Pages via continuous delivery with GitHub Actions. Every push to <code class="bg-slate-100 text-slate-800 px-1.5 py-0.5 rounded text-sm font-semibold">main</code> triggers validation, build packaging, and instant zero-downtime deployment.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap items-center justify-center md:justify-start gap-3 pt-2">
+          <a href="#projects" class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold text-sm shadow-sm transition-colors inline-flex items-center gap-2">
+            <span>Explore Projects</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+          <a href="https://github.com/viswa1524/project-website/actions" target="_blank" rel="noopener noreferrer" 
+             class="px-5 py-2.5 bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 rounded-lg font-semibold text-sm transition-colors inline-flex items-center gap-2 shadow-xs">
+            <i data-lucide="play-circle" class="w-4 h-4 text-emerald-600"></i>
+            <span>GitHub Action Runs</span>
+          </a>
+        </div>
+
+        <!-- Quick Info bar -->
+        <div class="pt-4 grid grid-cols-3 gap-4 border-t border-slate-200/80 text-left">
+          <div>
+            <div class="text-2xl font-bold text-slate-900">100%</div>
+            <div class="text-xs text-slate-500 font-medium">Automated CI/CD</div>
+          </div>
+          <div>
+            <div class="text-2xl font-bold text-slate-900">&lt; 30s</div>
+            <div class="text-xs text-slate-500 font-medium">Deploy Duration</div>
+          </div>
+          <div>
+            <div class="text-2xl font-bold text-slate-900">Zero</div>
+            <div class="text-xs text-slate-500 font-medium">Manual Overhead</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual: Real-time Workflow Card -->
+      <div class="md:col-span-5">
+        <div class="glass-card rounded-2xl p-6 shadow-xl border border-slate-200/90 relative overflow-hidden">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-4">
+            <div class="flex items-center gap-2">
+              <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+              <span class="text-xs font-semibold text-slate-900">deploy.yml</span>
+            </div>
+            <span class="text-[11px] font-mono text-slate-500 bg-slate-100 px-2 py-0.5 rounded">github-pages</span>
+          </div>
+
+          <div class="space-y-3 font-mono text-xs">
+            <div class="p-2.5 rounded-lg bg-slate-900 text-slate-100 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <i data-lucide="git-commit" class="w-4 h-4 text-indigo-400"></i>
+                <span class="text-slate-300">Push to main</span>
+              </div>
+              <span class="text-emerald-400 text-[11px]">Triggered</span>
+            </div>
+
+            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200/80 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>
+                <span class="text-slate-700">Checkout code</span>
+              </div>
+              <span class="text-slate-500 text-[11px]">actions/checkout@v4</span>
+            </div>
+
+            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200/80 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <i data-lucide="settings" class="w-4 h-4 text-indigo-600"></i>
+                <span class="text-slate-700">Configure Pages</span>
+              </div>
+              <span class="text-slate-500 text-[11px]">configure-pages@v4</span>
+            </div>
+
+            <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200/80 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <i data-lucide="upload-cloud" class="w-4 h-4 text-sky-600"></i>
+                <span class="text-slate-700">Upload Artifact</span>
+              </div>
+              <span class="text-slate-500 text-[11px]">upload-pages-artifact@v3</span>
+            </div>
+
+            <div class="p-2.5 rounded-lg bg-emerald-50 border border-emerald-200/70 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <i data-lucide="globe" class="w-4 h-4 text-emerald-600"></i>
+                <span class="text-emerald-900 font-semibold">Deploy to Pages</span>
+              </div>
+              <span class="text-emerald-700 font-semibold text-[11px]">SUCCESS (Live)</span>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+            <span>Branch: main</span>
+            <span class="text-indigo-600 font-medium">Auto-synced</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects Section -->
+  <section id="projects" class="py-16 bg-white border-y border-slate-200/80 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto space-y-10">
+      
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div>
+          <div class="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-1">Portfolio & Repositories</div>
+          <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Featured Projects</h2>
+        </div>
+        <div class="text-sm text-slate-500">
+          Source code hosted on GitHub with continuous integration
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        
+        <!-- Project 1: AISmartBudget -->
+        <div class="glass-card rounded-xl p-6 border border-slate-200 hover:border-indigo-300 transition-all shadow-sm hover:shadow-md flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
+                <i data-lucide="wallet" class="w-5 h-5"></i>
+              </div>
+              <span class="text-xs font-medium text-slate-500 bg-slate-100 px-2.5 py-1 rounded">TypeScript / React</span>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-bold text-slate-900">AISmartBudget</h3>
+              <p class="text-slate-600 text-sm mt-1.5 leading-relaxed">
+                AI Powered Budget Management & Personal Finance Assistant. Leverages generative models for financial forecasting, intelligent expense classification, and anomaly detection.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-2 text-xs text-slate-500">
+              <span>TypeScript</span>
+              <span>·</span>
+              <span>Gemini AI</span>
+              <span>·</span>
+              <span>Finance Analytics</span>
+              <span>·</span>
+              <span>TailwindCSS</span>
+            </div>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
+            <a href="https://github.com/viswa1524/AISmartBudget" target="_blank" rel="noopener noreferrer" 
+               class="text-xs font-semibold text-slate-900 hover:text-indigo-600 inline-flex items-center gap-1.5 transition-colors">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              <span>viswa1524/AISmartBudget</span>
+            </a>
+            <a href="https://github.com/viswa1524/AISmartBudget" target="_blank" rel="noopener noreferrer"
+               class="text-xs font-semibold text-indigo-600 hover:text-indigo-700 inline-flex items-center gap-1">
+              <span>View Repository</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2: project-website -->
+        <div class="glass-card rounded-xl p-6 border border-slate-200 hover:border-indigo-300 transition-all shadow-sm hover:shadow-md flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold">
+                <i data-lucide="globe" class="w-5 h-5"></i>
+              </div>
+              <span class="text-xs font-medium text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded">Live on GitHub Pages</span>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-bold text-slate-900">project-website</h3>
+              <p class="text-slate-600 text-sm mt-1.5 leading-relaxed">
+                Automated continuous deployment showcase website using GitHub Actions workflow orchestration, artifact validation, and native GitHub Pages hosting.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-2 text-xs text-slate-500">
+              <span>GitHub Actions</span>
+              <span>·</span>
+              <span>CI/CD</span>
+              <span>·</span>
+              <span>GitHub Pages</span>
+              <span>·</span>
+              <span>Modern Web</span>
+            </div>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
+            <a href="https://github.com/viswa1524/project-website" target="_blank" rel="noopener noreferrer" 
+               class="text-xs font-semibold text-slate-900 hover:text-indigo-600 inline-flex items-center gap-1.5 transition-colors">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              <span>viswa1524/project-website</span>
+            </a>
+            <a href="https://viswa1524.github.io/project-website/" target="_blank" rel="noopener noreferrer"
+               class="text-xs font-semibold text-indigo-600 hover:text-indigo-700 inline-flex items-center gap-1">
+              <span>Live Website</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GitHub Actions Workflow Deep-Dive Section -->
+  <section id="pipeline" class="py-16 px-4 sm:px-6 max-w-6xl mx-auto">
+    <div class="space-y-8">
+      <div>
+        <div class="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-1">Automation Architecture</div>
+        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">GitHub Actions CI/CD Pipeline</h2>
+        <p class="text-slate-600 text-sm mt-1 max-w-2xl">
+          Configured in <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded text-indigo-600">.github/workflows/deploy.yml</code> to provide secure, reproducible, automated publishing.
+        </p>
+      </div>
+
+      <!-- Workflow Steps Grid -->
+      <div class="grid md:grid-cols-4 gap-4">
+        
+        <div class="p-5 rounded-xl bg-white border border-slate-200/90 shadow-xs space-y-2">
+          <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center font-bold text-xs">
+            01
+          </div>
+          <h4 class="font-bold text-slate-900 text-sm">Code Push Trigger</h4>
+          <p class="text-xs text-slate-500 leading-relaxed">
+            Listens on pushes to <code class="font-mono text-slate-800">main</code> branch and manual <code class="font-mono text-slate-800">workflow_dispatch</code> triggers.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-xl bg-white border border-slate-200/90 shadow-xs space-y-2">
+          <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center font-bold text-xs">
+            02
+          </div>
+          <h4 class="font-bold text-slate-900 text-sm">Environment Config</h4>
+          <p class="text-xs text-slate-500 leading-relaxed">
+            Executes on <code class="font-mono text-slate-800">ubuntu-latest</code> with minimal token permissions for pages write and contents read.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-xl bg-white border border-slate-200/90 shadow-xs space-y-2">
+          <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center font-bold text-xs">
+            03
+          </div>
+          <h4 class="font-bold text-slate-900 text-sm">Artifact Packaging</h4>
+          <p class="text-xs text-slate-500 leading-relaxed">
+            Packages static assets using <code class="font-mono text-slate-800">actions/upload-pages-artifact@v3</code> with SHA verification.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-xl bg-white border border-slate-200/90 shadow-xs space-y-2">
+          <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs">
+            04
+          </div>
+          <h4 class="font-bold text-slate-900 text-sm">Pages Deployment</h4>
+          <p class="text-xs text-slate-500 leading-relaxed">
+            <code class="font-mono text-slate-800">actions/deploy-pages@v4</code> provisions SSL and deploys immediately to GitHub's global CDN edge.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Code viewer -->
+      <div id="automation" class="rounded-xl overflow-hidden border border-slate-800 bg-slate-950 text-slate-200 shadow-xl">
+        <div class="bg-slate-900 px-4 py-3 border-b border-slate-800 flex items-center justify-between text-xs">
+          <div class="flex items-center gap-2">
+            <i data-lucide="file-code" class="w-4 h-4 text-indigo-400"></i>
+            <span class="font-mono text-slate-300">.github/workflows/deploy.yml</span>
+          </div>
+          <span class="text-slate-500 font-mono text-[11px]">YAML · GitHub Actions</span>
+        </div>
+        <pre class="p-4 text-xs font-mono overflow-x-auto text-slate-300 leading-relaxed">
+name: Deploy Project Website to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+</pre>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-auto border-t border-slate-200 bg-white py-8 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-slate-800">viswa1524</span>
+        <span>·</span>
+        <span>Automated Project Website</span>
+        <span>·</span>
+        <span>GitHub Actions CI/CD</span>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="https://github.com/viswa1524" target="_blank" rel="noopener noreferrer" class="hover:text-slate-800 transition-colors">GitHub Profile</a>
+        <a href="https://github.com/viswa1524/project-website" target="_blank" rel="noopener noreferrer" class="hover:text-slate-800 transition-colors">Repository</a>
+        <a href="https://viswa1524.github.io/project-website/" class="text-indigo-600 font-medium hover:underline">viswa1524.github.io/project-website</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>
